@@ -20,7 +20,7 @@ import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
 import com.google.common.io.Files;
 
-import pages.constants;
+import pages.Constants;
 public class Baseclass {
 	
 	public static WebDriver driver =null;
@@ -29,14 +29,12 @@ public class Baseclass {
     public static ExtentTest test;
     public static ExtentHtmlReporter htmlReporter;
 	
-	public static void initialize()
+	public static void Initialize()
 	{
 		if (driver==null)
 		{
-			//System.setProperty("webdriver.chrome.driver", System.getProperty("user")+ "/Drivers/chromedriver.exe");
-			System.setProperty("webdriver.chrome.driver", "C:\\Users\\Abhij\\Desktop\\Jumi\\chromedriver_win\\chromedriver.exe");
-			ChromeOptions options = new ChromeOptions();
-		//	options.addArguments("--disable-popup-blocking");
+			System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+ "\\Drivers\\chromedriver.exe");
+	     	ChromeOptions options = new ChromeOptions();
 			options.setExperimentalOption("excludeSwitches",Arrays.asList("disable-popup-blocking"));
 			DesiredCapabilities cap= DesiredCapabilities.chrome();
 			options.merge(cap); 
@@ -49,7 +47,7 @@ public class Baseclass {
 	    driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
 	    driver.manage().timeouts().pageLoadTimeout(40,TimeUnit.SECONDS);
 	    driver.manage().window().maximize();
-	    driver.get(constants.url);
+	    driver.get(Constants.url);
 	}
 	    
 	

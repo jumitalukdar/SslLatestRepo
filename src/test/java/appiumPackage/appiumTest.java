@@ -3,7 +3,7 @@
 //import org.testng.Assert;
 import org.testng.annotations.*;
 
-import pages.constants;
+import pages.Constants;
 
 import base.appiumBase;
 

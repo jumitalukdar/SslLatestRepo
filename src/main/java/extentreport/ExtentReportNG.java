@@ -7,7 +7,7 @@ import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
 
-import pages.constants;
+import pages.Constants;
 
 
 
@@ -23,7 +23,7 @@ public class ExtentReportNG {
 		String actualDate = format.format(date);
 		
 		String reportPath = System.getProperty("user.dir")+
-				"/test-output/ExecutionReport_"+actualDate+".html";
+				"/test-output/ExetentReport_"+actualDate+".html";
 		
 		ExtentHtmlReporter htmlReport = new ExtentHtmlReporter(reportPath);
 		

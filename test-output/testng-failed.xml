@@ -8,6 +8,7 @@
     <classes>
       <class name="restTestpackage.restTest">
         <methods>
+          <include name="validateUserId"/>
           <include name="validateTitle"/>
         </methods>
       </class> <!-- restTestpackage.restTest -->

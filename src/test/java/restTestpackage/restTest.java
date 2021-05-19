@@ -1,5 +1,5 @@
 package restTestpackage;
-import pages.constants;
+import pages.Constants;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -20,9 +20,9 @@ public class restTest {
 	@Test
 	public void validateStatusCode() {
 	Response res=given()	
-		.baseUri(constants.BASEURL)
+		.baseUri(Constants.BASEURL)
 	.when().
-		get(constants.basepath)
+		get(Constants.basepath)
 	.then()
 		.statusCode(200)
 		.statusLine("HTTP/1.1 200 OK").extract().response();
@@ -31,9 +31,9 @@ public class restTest {
 	@Test
 	public void validateHeaderType() {
 	ValidatableResponse res=given()	
-		.baseUri(constants.BASEURL)
+		.baseUri(Constants.BASEURL)
 	.when().
-		get(constants.basepath)
+		get(Constants.basepath)
 	.then()
 		.assertThat().header("Content-Type", "application/json; charset=utf-8");
 
@@ -44,20 +44,20 @@ public class restTest {
 	@Test
 	public void validateUserId() {
 		Response res=given()	
-			.baseUri(constants.BASEURL)
+			.baseUri(Constants.BASEURL)
 		.when().
-			get(constants.basepath)
+			get(Constants.basepath)
 		.then()
 			.extract().response();
 		
 
 		JsonPath path=res.jsonPath();
 				
-		Assert.assertEquals(path.getInt("data[5].user_id"),93);
-		int userid = path.get("data.find {i-> i.title=='Vesco taceo suscipit amita universe civis spargo tollo et corrupti tumultus est carus ut tandem confero sint dolores doloremque.'}.user_id");
+		Assert.assertEquals(path.getInt("data[5].user_id"),14);
+		int userid = path.get("data.find {i-> i.title=='Conitor tergiversatio non totus crustulum barba demulceo ocer ea attonbitus timidus infit auditor nesciunt.'}.user_id");
 	
 		System.out.println(userid);
-		Assert.assertEquals(userid, 93);		
+		Assert.assertEquals(userid, 15);		
 				
 		
 
@@ -67,20 +67,20 @@ public class restTest {
 	@Test
 	public void validateTitle() {
 		Response res=given()	
-			.baseUri(constants.BASEURL)
+			.baseUri(Constants.BASEURL)
 		.when().
-			get(constants.basepath)
+			get(Constants.basepath)
 		.then()
 			.extract().response();
 		
 
 		JsonPath path=res.jsonPath();
 				
-		Assert.assertEquals(path.getString("data[6].title"),"Tres convoco stabilis ars expedita strenuus ut damno et somniculosus deinde valetudo auctor repudiandae utroque aeneus.");
-		String title = path.get("data.find {i-> i.user_id==96}.title");
+		Assert.assertEquals(path.getString("data[6].title"),"Conitor tergiversatio non totus crustulum barba demulceo ocer ea attonbitus timidus infit auditor nesciunt.");
+		String title = path.get("data.find {i-> i.user_id==17}.title");
 	
 		System.out.println(title);
-		Assert.assertEquals(title, "Tumultus denuo carpo aetas censura vae utique degero deficio demitto convoco tenetur paens quidem.");		
+		Assert.assertEquals(title, "Concedo sumo calco molestias rerum crur ulterius nostrum claro supellex succurro aeger expedita contabesco debeo.");		
 				
 		
 
